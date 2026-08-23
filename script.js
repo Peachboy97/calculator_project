@@ -22,5 +22,7 @@ function division (numberA, numberB) {
     return sum
 }
 
-
+let valueA = "number goes here";
+let valueB = "Second number goes here";
+let operator = "This is where +, -, *, / goes";
 
