@@ -23,13 +23,18 @@ function division (numberA, numberB) {
 }
 
 let valueA = [];
-let valueB = 0;
-let operator = ["*", "+", "-", "/"]
+let valueB = [];
+let operator = [];
 
 
-function operate (valueA, valueB) {
 
-     if (operator[0] == "*"){
+
+function operate (operator) {
+    // Number(valueA);
+    // Number(valueB);
+
+
+     if (operator === "*"){
 
         return multiplication(valueA, valueB)
 
@@ -42,7 +47,18 @@ function operate (valueA, valueB) {
 
 // Below is the code for the buttons 
 
-const displayScreen = document.querySelector(".display")
+const displayScreen = document.querySelector(".display");
+
+const multiply = document.querySelector("#multiply");
+
+multiply.addEventListener ("click", () => {
+    operator.push("*");
+    if (operator.length >=2) {
+        operator.splice(1,1);
+    }
+
+    console.log(operator)
+})
 
 
 const one = document.querySelector("#one");
@@ -59,66 +75,121 @@ const zero = document.querySelector("#zero");
 
 
 one.addEventListener("click", () => {
-    valueA += 1;
+    valueA.push(1);
     console.log(valueA);
     displayScreen.textContent = valueA
 });
 
 two.addEventListener("click", () => {
-    valueA += 2;
-    console.log(valueA);
-    displayScreen.textContent = valueA
+    
+    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+        valueA.push(2);
+        console.log(valueA);
+        displayScreen.textContent = valueA;
+    } else {
+        valueB.push(2);
+        console.log(valueB)
+        displayScreen.textContent = valueB;
+    }
 });
 
 three.addEventListener("click", () => {
-    valueA += 3;
-    console.log(valueA);
-    console.log(typeof(valueA));
-    displayScreen.textContent = valueA;
+    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/"){
+        valueA.push(3);
+        console.log(valueA);
+        console.log(typeof(valueA));
+        displayScreen.textContent = valueA;
+    } else {
+        valueB.push(3);
+        console.log(valueB);
+        displayScreen.textContent = valueB
+        
+    }
     
 });
 
 four.addEventListener("click", () => {
-    valueA += 4;
-    console.log(valueA);
-    displayScreen.textContent = valueA
+    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/"){
+        valueA.push(4);
+        console.log(valueA);
+        displayScreen.textContent = valueA
+    } else {
+        valueB.push(4);
+        displayScreen.textContent = valueB
+    }
 });
 
 five.addEventListener("click", () => {
-    valueA += 5;
-    console.log(valueA);
-    displayScreen.textContent = valueA
+    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+        valueA.push(5);
+        console.log(valueA);
+        displayScreen.textContent = valueA
+    } else {
+        valueB.push(5);
+        displayScreen.textContent = valueB
+    }
 });
 
 six.addEventListener("click", () => {
-    valueA += 6;
-    console.log(valueA);
-    displayScreen.textContent = valueA
+    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+        valueA.push(6);
+        console.log(valueA);
+        displayScreen.textContent = valueA
+    } else {
+        valueB.push(6);
+        displayScreen.textContent =valueB
+    }
 });
 
 seven.addEventListener("click", () => {
-    valueA += 7;
-    console.log(valueA);
-    displayScreen.textContent = valueA
+    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+        valueA.push(7);
+        console.log(valueA);
+        displayScreen.textContent = valueA
+    } else {
+        valueB.push(7);
+        displayScreen.textContent = valueB;
+    }
 });
 
 eight.addEventListener("click", () => {
-    valueA += 8;
-    console.log(valueA);
-    displayScreen.textContent = valueA
+    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+        valueA.push(8);
+        console.log(valueA);
+        displayScreen.textContent = valueA
+    } else {
+        valueB.push(8);
+        displayScreen.textContent = valueB
+    }
 });
 
 nine.addEventListener("click", () => {
-    valueA += 9;
-    console.log(valueA);
-    displayScreen.textContent = valueA
+    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+        valueA.push(9);
+        console.log(valueA);
+        displayScreen.textContent = valueA
+    } else {
+        valueB.push(9);
+        displayScreen.textContent = valueB
+    }
 });
 
 zero.addEventListener("click", () => {
-    valueA += 0;
-    console.log(valueA);
-    displayScreen.textContent = valueA
+    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+        valueA.push(0);
+        console.log(valueA);
+        displayScreen.textContent = valueA
+    } else {
+        valueB.push(0);
+        displayScreen.textContent = valueB
+    }
 });
+
+
+
+
+
+
 
 
 
