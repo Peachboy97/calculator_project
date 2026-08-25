@@ -39,26 +39,64 @@ function operate () {
 
      if (operator[0] == "*"){
 
+        if (valueA.length >= 0) {
+            for (i = 0; i <= valueA.length; i++){
+                valueA.splice(0,1);
+            }
+            valueA.push(multiplication(numberA, numberB));
+            for (j = 0; j <= valueB.length; j++){
+                valueB.splice(0.1);
+            }
+          }
+
         return displayScreen.textContent = (multiplication(numberA, numberB))
 
      } else if (operator[0] == "+") {
 
+          if (valueA.length >= 0) {
+            for (i = 0; i <= valueA.length; i++){
+                valueA.splice(0,1);
+            }
+            valueA.push(addition(numberA, numberB));
+            for (j = 0; j <= valueB.length; j++){
+                valueB.splice(0.1);
+            };
+          };
+    
         return displayScreen.textContent = addition(numberA, numberB);
 
      } else if (operator[0] == "-") {
 
-        return displayScreen.textContent = addition (numberA, numberB);
+          if (valueA.length >= 0) {
+            for (i = 0; i <= valueA.length; i++){
+                valueA.splice(0,1);
+            }
+            valueA.push(subtraction(numberA, numberB));
+            for (j = 0; j <= valueB.length; j++){
+                valueB.splice(0.1);
+            };
+          };
+
+        return displayScreen.textContent = subtraction (numberA, numberB);
      } else {
         if (operator[0] == "/") {
+
+          if (valueA.length >= 0) {
+            for (i = 0; i <= valueA.length; i++){
+                valueA.splice(0,1);
+            }
+            valueA.push(division(numberA, numberB));
+
+            for (j = 0; j <= valueB.length; j++){
+                valueB.splice(0.1);
+            }
+          }
             
             return displayScreen.textContent = division(numberA, numberB);
         }
      }
 
 }
-
-
-
 
 // Below is the code for the buttons 
 
@@ -73,14 +111,6 @@ const equals = document.querySelector("#equals");
 
 equals.addEventListener ("click", () => {
     operate();
-    
-        for ( i=0; i <= valueA.length; i++){
-        valueA.splice(0,1);
-
-        for (j = 0; j <= valueB.length; j++)  {
-            valueB.splice(0,1);
-        }
-    }
 
     operator.splice(0,1);
 
@@ -92,6 +122,11 @@ equals.addEventListener ("click", () => {
 add.addEventListener ("click", () => {
     operator.push("+");
     console.log(operator);
+    if (operator.length >=2) {
+        operate();
+        operator.splice(0,1);
+        console.log(operator);
+    }
 
 });
 
@@ -101,21 +136,27 @@ subtract.addEventListener("click", () => {
     if (operator.length >=2) {
         operate();
         operator.splice(0,1);
+        console.log(operator);
 
     }
 });
 
 multiply.addEventListener ("click", () => {
     operator.push("*");
-    // if (operator.length >=2) {
-    //     operator.splice(1,1);
-    // }
+    if (operator.length >=2) {
+        operate();
+        operator.splice(0,1);
+    }
 
     console.log(operator)
 });
 
 divide.addEventListener ("click", () => {
     operator.push("/");
+    if (operator.length >= 2) {
+        operate();
+        operator.splice(0,1);
+    }
     console.log(operator);
 })
 
