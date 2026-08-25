@@ -107,6 +107,21 @@ const subtract = document.querySelector("#subtract");
 const multiply = document.querySelector("#multiply");
 const divide = document.querySelector("#divide");
 const equals = document.querySelector("#equals");
+const clear = document.querySelector("#clear");
+
+clear.addEventListener ("click", () => {
+    for (i = 0; i <= valueA.length; i++) {
+        valueA.splice(0,1);
+        valueB.splice(0,1);
+    }
+    operator.splice(0,1);
+
+    displayScreen.textContent = valueA;
+
+    console.log(valueA);
+    console.log(valueB);
+    console.log(operator);
+})
 
 
 equals.addEventListener ("click", () => {
