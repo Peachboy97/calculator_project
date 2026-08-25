@@ -37,11 +37,22 @@ function operate () {
     let numberA = Number(stringA);
     let numberB = Number(stringB);
 
-
      if (operator[0] == "*"){
 
         return displayScreen.textContent = (multiplication(numberA, numberB))
 
+     } else if (operator[0] == "+") {
+
+        return displayScreen.textContent = addition(numberA, numberB);
+
+     } else if (operator[0] == "-") {
+
+        return displayScreen.textContent = addition (numberA, numberB);
+     } else {
+        if (operator[0] == "/") {
+            
+            return displayScreen.textContent = division(numberA, numberB);
+        }
      }
 
 }
@@ -53,23 +64,62 @@ function operate () {
 
 const displayScreen = document.querySelector(".display");
 
+const add = document.querySelector("#addition");
+const subtract = document.querySelector("#subtract");
 const multiply = document.querySelector("#multiply");
+const divide = document.querySelector("#divide");
 const equals = document.querySelector("#equals");
 
 
 equals.addEventListener ("click", () => {
     operate();
     
-})
+        for ( i=0; i <= valueA.length; i++){
+        valueA.splice(0,1);
+
+        for (j = 0; j <= valueB.length; j++)  {
+            valueB.splice(0,1);
+        }
+    }
+
+    operator.splice(0,1);
+
+    console.log(valueA);
+    console.log(valueB);
+
+});
+
+add.addEventListener ("click", () => {
+    operator.push("+");
+    console.log(operator);
+
+});
+
+subtract.addEventListener("click", () => {
+    operator.push("-");
+    console.log(operator);
+    if (operator.length >=2) {
+        operate();
+        operator.splice(0,1);
+
+    }
+});
 
 multiply.addEventListener ("click", () => {
     operator.push("*");
-    if (operator.length >=2) {
-        operator.splice(1,1);
-    }
+    // if (operator.length >=2) {
+    //     operator.splice(1,1);
+    // }
 
     console.log(operator)
+});
+
+divide.addEventListener ("click", () => {
+    operator.push("/");
+    console.log(operator);
 })
+
+
 
 
 const one = document.querySelector("#one");
@@ -86,9 +136,14 @@ const zero = document.querySelector("#zero");
 
 
 one.addEventListener("click", () => {
-    valueA.push(1);
-    console.log(valueA);
-    displayScreen.textContent = valueA.join("")
+    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+        valueA.push(1);
+        console.log(valueA);
+        displayScreen.textContent = valueA.join("")
+    } else {
+        valueB.push(1);
+        displayScreen.textContent = valueB.join("");
+    }
 });
 
 two.addEventListener("click", () => {
@@ -156,6 +211,7 @@ six.addEventListener("click", () => {
 seven.addEventListener("click", () => {
     if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
         valueA.push(7);
+
         console.log(valueA);
         displayScreen.textContent = valueA.join("");
     } else {
@@ -196,13 +252,4 @@ zero.addEventListener("click", () => {
         displayScreen.textContent = valueB.join("");
     }
 });
-
-
-
-
-
-
-
-
-
 
