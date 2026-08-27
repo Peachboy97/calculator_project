@@ -26,18 +26,24 @@ let valueA = [];
 let valueB = [];
 let operator = [];
 
-
-
-
 function operate () {
-    if (valueB[0] == 0 && operator[0] == "/") {
 
-        valueA.splice(0,1);
-        valueB.splice(0,1);
-        operator.splice(0,1);
+    let filtered = valueB.reduce((sum, nextNumber) => sum + nextNumber,0);
+        if (filtered === 0 && operator[0] === "/") {
 
-        return displayScreen.textContent = "You can't divde by zero! Try something else"
-    } else {
+            for (b = valueB.length; b == valueB.length; b--) {
+                valueB.splice([0],1);
+            }
+
+            for (a = valueA.length; a == valueA.length; a--) {
+                valueA.splice([0],1)
+            }
+
+            console.log(valueB);
+            console.log(valueA);
+            return displayScreen.textContent = "Can't divide by zero, Try something else"
+
+        } else {
             let stringA = valueA.join("");
             
             let stringB = valueB.join("");
@@ -48,12 +54,12 @@ function operate () {
             if (operator[0] == "*"){
 
                 if (valueA.length >= 0) {
-                    for (i = 0; i <= valueA.length; i++){
+                    for (i = valueA.length; i == valueA.length; i--){
                         valueA.splice(0,1);
                     }
                     valueA.push(multiplication(numberA, numberB));
-                    for (j = 0; j <= valueB.length; j++){
-                        valueB.splice(0.1);
+                    for (j = valueB.length; j == valueB.length; j--){
+                        valueB.splice(0,1);
                     }
                 }
 
@@ -62,12 +68,12 @@ function operate () {
             } else if (operator[0] == "+") {
 
                 if (valueA.length >= 0) {
-                    for (i = 0; i <= valueA.length; i++){
+                    for (i = valueA.length; i == valueA.length; i--){
                         valueA.splice(0,1);
                     }
                     valueA.push(addition(numberA, numberB));
-                    for (j = 0; j <= valueB.length; j++){
-                        valueB.splice(0.1);
+                    for (j = valueB.length; j == valueB.length; j--){
+                        valueB.splice(0,1);
                     };
                 };
             
@@ -76,12 +82,12 @@ function operate () {
             } else if (operator[0] == "-") {
 
                 if (valueA.length >= 0) {
-                    for (i = 0; i <= valueA.length; i++){
+                    for (i = valueA.length; i == valueA.length; i--){
                         valueA.splice(0,1);
                     }
                     valueA.push(subtraction(numberA, numberB));
-                    for (j = 0; j <= valueB.length; j++){
-                        valueB.splice(0.1);
+                    for (j = valueB.length; j == valueB.length; j--){
+                        valueB.splice(0,1);
                     };
                 };
 
@@ -90,13 +96,13 @@ function operate () {
                 if (operator[0] == "/") {
 
                 if (valueA.length >= 0) {
-                    for (i = 0; i <= valueA.length; i++){
+                    for (i = valueA.length; i == valueA.length; i--){
                         valueA.splice(0,1);
                     }
                     valueA.push(division(numberA, numberB));
 
-                    for (j = 0; j <= valueB.length; j++){
-                        valueB.splice(0.1);
+                    for (j = valueB.length; j == valueB.length; j--){
+                        valueB.splice(0,1);
                     }
                 }
                     
@@ -120,10 +126,15 @@ const equals = document.querySelector("#equals");
 const clear = document.querySelector("#clear");
 
 clear.addEventListener ("click", () => {
-    for (i = 0; i <= valueA.length; i++) {
+    for (i = valueA.length; i == valueA.length; i--) {
         valueA.splice(0,1);
-        valueB.splice(0,1);
+    
     }
+
+    for (j = valueB.length; j == valueB.length; j--) {
+        valueB.splice(0,1)
+    }
+
     operator.splice(0,1);
 
     displayScreen.textContent = valueA;
