@@ -230,11 +230,12 @@ const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
 const zero = document.querySelector("#zero");
 const backspace = document.querySelector("#delete");
+const point = document.querySelector("#point")
 
 
 
 one.addEventListener("click", () => {
-    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+    if (operator.length === 0) {
         valueA.push(1);
         console.log(valueA);
         displayScreen.textContent = valueA.join("")
@@ -246,7 +247,7 @@ one.addEventListener("click", () => {
 
 two.addEventListener("click", () => {
     
-    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+    if (operator.length === 0) {
         valueA.push(2);
         console.log(valueA);
         displayScreen.textContent = valueA.join("");
@@ -258,7 +259,7 @@ two.addEventListener("click", () => {
 });
 
 three.addEventListener("click", () => {
-    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/"){
+    if (operator.length === 0){
         valueA.push(3);
         console.log(valueA);
         console.log(typeof(valueA));
@@ -273,7 +274,7 @@ three.addEventListener("click", () => {
 });
 
 four.addEventListener("click", () => {
-    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/"){
+    if (operator.length === 0){
         valueA.push(4);
         console.log(valueA);
         displayScreen.textContent = valueA.join("");
@@ -284,7 +285,7 @@ four.addEventListener("click", () => {
 });
 
 five.addEventListener("click", () => {
-    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+    if (operator.length === 0) {
         valueA.push(5);
         console.log(valueA);
         displayScreen.textContent = valueA.join("");
@@ -295,7 +296,7 @@ five.addEventListener("click", () => {
 });
 
 six.addEventListener("click", () => {
-    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+    if (operator.length === 0) {
         valueA.push(6);
         console.log(valueA);
         displayScreen.textContent = valueA.join("");
@@ -307,7 +308,7 @@ six.addEventListener("click", () => {
 });
 
 seven.addEventListener("click", () => {
-    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+    if (operator.length === 0) {
         valueA.push(7);
 
         console.log(valueA);
@@ -319,7 +320,7 @@ seven.addEventListener("click", () => {
 });
 
 eight.addEventListener("click", () => {
-    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+    if (operator.length === 0) {
         valueA.push(8);
         console.log(valueA);
         displayScreen.textContent = valueA.join("");
@@ -330,7 +331,7 @@ eight.addEventListener("click", () => {
 });
 
 nine.addEventListener("click", () => {
-    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+    if (operator.length === 0) {
         valueA.push(9);
         console.log(valueA);
         displayScreen.textContent = valueA.join("");
@@ -341,7 +342,7 @@ nine.addEventListener("click", () => {
 });
 
 zero.addEventListener("click", () => {
-    if (operator[0] !== "*" && operator[0] !== "+" && operator[0] !== "-" && operator[0] !== "/") {
+    if (operator.length === 0) {
         valueA.push(0);
         console.log(valueA);
         displayScreen.textContent = valueA.join("");
@@ -350,4 +351,16 @@ zero.addEventListener("click", () => {
         displayScreen.textContent = valueB.join("");
     }
 });
+
+backspace.addEventListener("click", () => {
+    if (operator.length === 0) {
+        valueA.splice(-1,1);
+        
+        displayScreen.textContent = valueA.join("")
+        
+    } else {
+        valueB.splice(-1,1);
+        displayScreen.textContent = valueB.join("")
+    }
+})
 
