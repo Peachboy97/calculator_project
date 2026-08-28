@@ -158,28 +158,47 @@ equals.addEventListener ("click", () => {
 add.addEventListener ("click", () => {
     operator.push("+");
     console.log(operator);
-    if (operator.length >=2) {
-        operate();
-        operator.splice(0,1);
-        console.log(operator);
-    }
+    if (operator.length == 2 && valueB.length == 0) {
 
+        operator.splice(0,1);
+
+        console.log(operator);
+
+    } else if (operator.length == 2 && valueB.length != 0) {
+            operate();
+            operator.splice(0,1);
+            
+            console.log(operator);
+    }
+    
 });
 
 subtract.addEventListener("click", () => {
     operator.push("-");
     console.log(operator);
-    if (operator.length >=2) {
+
+    if (operator.length ==2 && valueB.length == 0) {
+
+        operator.splice(0,1);
+        console.log(operator)
+    
+    } else if (operator.length == 2 && valueB.length != 0) {
+
         operate();
         operator.splice(0,1);
-        console.log(operator);
-
+        console.log(operator)
     }
 });
 
 multiply.addEventListener ("click", () => {
     operator.push("*");
-    if (operator.length >=2) {
+
+    if (operator.length ==2 && valueB.length == 0) {
+    
+        operator.splice(0,1);
+
+    } else if (operator.length == 2 && valueB.length != 0) {
+
         operate();
         operator.splice(0,1);
     }
@@ -189,15 +208,16 @@ multiply.addEventListener ("click", () => {
 
 divide.addEventListener ("click", () => {
     operator.push("/");
-    if (operator.length >= 2) {
+    if (operator.length == 2 && valueB.length == 0) {
+        
+        operator.splice(0,1);
+
+    } else if (operator.length == 2 && valueB.length != 0) {
         operate();
         operator.splice(0,1);
     }
     console.log(operator);
 })
-
-
-
 
 const one = document.querySelector("#one");
 const two = document.querySelector("#two");
