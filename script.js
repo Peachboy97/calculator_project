@@ -364,3 +364,24 @@ backspace.addEventListener("click", () => {
     }
 })
 
+point.addEventListener ("click", () => {
+    if (operator.length === 0) {
+        if (!valueA.includes(".")){
+
+            valueA.push(".");
+            displayScreen.textContent = valueA.join("");
+        }
+        
+    }  else {
+        if (!valueB.includes(".")) {
+            valueB.push(".");
+
+            displayScreen.textContent = valueB.join("");
+        }
+    }
+});
+
+
+
+
+
