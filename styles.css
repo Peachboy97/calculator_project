@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+h2 {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.calculatorBody {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, green, white, orange);
+  width: 16rem;
+  height: 30rem;
+  padding: 1.5em;
+  border-radius: 4%;  
+  align-items: center;
+  justify-content: space-between;
+  border: 1.5px solid;
+  margin-top: 2em;
+ 
+  
+}
+
+.display {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(231, 229, 231);
+  
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size:x-large
+
+   
+}
+
+
+.container {
+   display: flex;
+   flex-direction: column;
+    height: 70%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+
+.row1,
+.topRow,
+.row2,
+.row3,
+.row4 {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    gap: 12px;
+    
+}
+
+
+
+.btn {
+    flex: 1;
+    min-width: 0;
+    height: 55px;
+
+    background: linear-gradient(-60deg, #0ff55c, #aba5ac, #fac24a, #da7354);
+
+    font-size: medium;
+    font-weight: 250;
+    transition: 200ms;
+    border: none;
+    border-radius: 8%;
+
+    animation-name: spin;
+    animation-duration: 3s;
+
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    
+   
+}
+
+@keyframes spin {
+    0% {
+
+    }
+    
+    50% {
+        scale: 3;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        
+    }
+    
+}
+
+.btn:hover {
+   
+    scale: 2;
+}
+
+
+#zero,
+#clear {
+    flex: 3;
+}
