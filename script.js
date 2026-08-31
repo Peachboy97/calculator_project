@@ -150,49 +150,44 @@ equals.addEventListener ("click", () => {
 
     operator.splice(0,1);
 
-    console.log(valueA);
-    console.log(valueB);
-
 });
 
 add.addEventListener ("click", () => {
     operator.push("+");
-    console.log(operator);
+    displayScreen.textContent = operator.join("");
+    
     if (operator.length == 2 && valueB.length == 0) {
 
         operator.splice(0,1);
 
-        console.log(operator);
-
     } else if (operator.length == 2 && valueB.length != 0) {
             operate();
             operator.splice(0,1);
-            
-            console.log(operator);
     }
     
 });
 
 subtract.addEventListener("click", () => {
     operator.push("-");
-    console.log(operator);
+    displayScreen.textContent = operator.join("");
+    
 
     if (operator.length ==2 && valueB.length == 0) {
 
         operator.splice(0,1);
-        console.log(operator)
     
     } else if (operator.length == 2 && valueB.length != 0) {
 
         operate();
         operator.splice(0,1);
-        console.log(operator)
     }
 });
 
 multiply.addEventListener ("click", () => {
     operator.push("*");
 
+    displayScreen.textContent = operator.join("")
+
     if (operator.length ==2 && valueB.length == 0) {
     
         operator.splice(0,1);
@@ -202,12 +197,11 @@ multiply.addEventListener ("click", () => {
         operate();
         operator.splice(0,1);
     }
-
-    console.log(operator)
 });
 
 divide.addEventListener ("click", () => {
     operator.push("/");
+    displayScreen.textContent = operator.join("");
     if (operator.length == 2 && valueB.length == 0) {
         
         operator.splice(0,1);
@@ -216,7 +210,6 @@ divide.addEventListener ("click", () => {
         operate();
         operator.splice(0,1);
     }
-    console.log(operator);
 })
 
 const one = document.querySelector("#one");
@@ -237,7 +230,7 @@ const point = document.querySelector("#point")
 one.addEventListener("click", () => {
     if (operator.length === 0) {
         valueA.push(1);
-        console.log(valueA);
+        
         displayScreen.textContent = valueA.join("")
     } else {
         valueB.push(1);
@@ -249,11 +242,9 @@ two.addEventListener("click", () => {
     
     if (operator.length === 0) {
         valueA.push(2);
-        console.log(valueA);
         displayScreen.textContent = valueA.join("");
     } else {
         valueB.push(2);
-        console.log(valueB)
         displayScreen.textContent = valueB.join("");
     }
 });
@@ -261,12 +252,10 @@ two.addEventListener("click", () => {
 three.addEventListener("click", () => {
     if (operator.length === 0){
         valueA.push(3);
-        console.log(valueA);
-        console.log(typeof(valueA));
+
         displayScreen.textContent = valueA.join("");
     } else {
         valueB.push(3);
-        console.log(valueB);
         displayScreen.textContent = valueB.join("");
         
     }
@@ -276,7 +265,6 @@ three.addEventListener("click", () => {
 four.addEventListener("click", () => {
     if (operator.length === 0){
         valueA.push(4);
-        console.log(valueA);
         displayScreen.textContent = valueA.join("");
     } else {
         valueB.push(4);
@@ -287,7 +275,6 @@ four.addEventListener("click", () => {
 five.addEventListener("click", () => {
     if (operator.length === 0) {
         valueA.push(5);
-        console.log(valueA);
         displayScreen.textContent = valueA.join("");
     } else {
         valueB.push(5);
@@ -298,7 +285,7 @@ five.addEventListener("click", () => {
 six.addEventListener("click", () => {
     if (operator.length === 0) {
         valueA.push(6);
-        console.log(valueA);
+        
         displayScreen.textContent = valueA.join("");
     } else {
         valueB.push(6);
@@ -310,8 +297,6 @@ six.addEventListener("click", () => {
 seven.addEventListener("click", () => {
     if (operator.length === 0) {
         valueA.push(7);
-
-        console.log(valueA);
         displayScreen.textContent = valueA.join("");
     } else {
         valueB.push(7);
@@ -322,7 +307,6 @@ seven.addEventListener("click", () => {
 eight.addEventListener("click", () => {
     if (operator.length === 0) {
         valueA.push(8);
-        console.log(valueA);
         displayScreen.textContent = valueA.join("");
     } else {
         valueB.push(8);
@@ -333,7 +317,6 @@ eight.addEventListener("click", () => {
 nine.addEventListener("click", () => {
     if (operator.length === 0) {
         valueA.push(9);
-        console.log(valueA);
         displayScreen.textContent = valueA.join("");
     } else {
         valueB.push(9);
@@ -344,7 +327,6 @@ nine.addEventListener("click", () => {
 zero.addEventListener("click", () => {
     if (operator.length === 0) {
         valueA.push(0);
-        console.log(valueA);
         displayScreen.textContent = valueA.join("");
     } else {
         valueB.push(0);
